@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Товары</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>Товары</h1>
+
+    <form id="product-form" autocomplete="off">
+      <input type="hidden" id="product-id">
+      <label>Название
+        <input id="name" required maxlength="100">
+      </label>
+      <label>Категория
+        <input id="category" required maxlength="50">
+      </label>
+      <label>Цена
+        <input id="price" type="number" required min="0" step="0.01">
+      </label>
+      <label>Количество
+        <input id="quantity" type="number" required min="0" step="1">
+      </label>
+      <div class="actions">
+        <button type="submit" id="submit-btn">Добавить</button>
+        <button type="button" id="cancel-btn" class="secondary" hidden>Отмена</button>
+      </div>
+    </form>
+
+    <p id="message" role="alert" hidden></p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Категория</th>
+            <th class="num">Цена</th>
+            <th class="num">Кол-во</th>
+            <th>Создан</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <p id="empty" hidden>Пока нет записей.</p>
+    </div>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
